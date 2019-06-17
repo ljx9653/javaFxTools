@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="461.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ljx.javaFx.controller.TimeStatisticsController">
+    <children>
+        <TabPane layoutX="14.0" layoutY="37.0" prefHeight="438.0" prefWidth="475.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="时间统计">
+                    <content>
+                        <fx:include source="timeStatistics.fxml" />
+                        <!--<BorderPane prefHeight="200.0" prefWidth="200.0">-->
+                        <!--<top>-->
+                        <!--<TextField fx:id="timeStatisticsResultTextField" alignment="CENTER" prefHeight="70.0" prefWidth="422.0" promptText="00:00:00" style="-fx-background-color: e3e3e3;" text="00:00:00" BorderPane.alignment="CENTER">-->
+                        <!--<font>-->
+                        <!--<Font size="35.0" />-->
+                        <!--</font>-->
+                        <!--</TextField>-->
+                        <!--</top>-->
+                        <!--<center>-->
+                        <!--<BorderPane prefHeight="339.0" prefWidth="281.0" BorderPane.alignment="CENTER">-->
+                        <!--<center>-->
+                        <!--<TextArea fx:id="timeStatisticsInputTextArea" prefHeight="347.0" prefWidth="190.0" promptText="请输入要计算的时间" wrapText="true" BorderPane.alignment="CENTER">-->
+                        <!--<BorderPane.margin>-->
+                        <!--<Insets bottom="30.0" top="30.0" />-->
+                        <!--</BorderPane.margin>-->
+                        <!--</TextArea>-->
+                        <!--</center>-->
+                        <!--<left>-->
+                        <!--<AnchorPane prefHeight="331.0" prefWidth="50.0" BorderPane.alignment="CENTER" />-->
+                        <!--</left>-->
+                        <!--<right>-->
+                        <!--<AnchorPane prefHeight="356.0" prefWidth="55.0" BorderPane.alignment="CENTER" />-->
+                        <!--</right>-->
+                        <!--</BorderPane>-->
+                        <!--</center>-->
+                        <!--<right>-->
+                        <!--<VBox alignment="CENTER_LEFT" prefHeight="350.0" prefWidth="129.0" BorderPane.alignment="CENTER">-->
+                        <!--<children>-->
+                        <!--<Button fx:id="executeButton" mnemonicParsing="false" onAction="#timeStatistics" prefHeight="30.0" prefWidth="80.0" text="统计">-->
+                        <!--<VBox.margin>-->
+                        <!--<Insets bottom="30.0" />-->
+                        <!--</VBox.margin>-->
+                        <!--</Button>-->
+                        <!--<Button fx:id="emtpyButton" mnemonicParsing="false" onAction="#emptyText" prefHeight="30.0" prefWidth="80.0" text="清空内容">-->
+                        <!--<VBox.margin>-->
+                        <!--<Insets bottom="30.0" />-->
+                        <!--</VBox.margin>-->
+                        <!--</Button>-->
+                        <!--<Button fx:id="resetButton" mnemonicParsing="false" onAction="#resetTime" prefHeight="30.0" prefWidth="80.0" text="重置">-->
+                                 <!--<VBox.margin>-->
+                                    <!--<Insets bottom="30.0" />-->
+                                 <!--</VBox.margin></Button>-->
+                              <!--<Button fx:id="selectDirBtn" mnemonicParsing="false" onAction="#dirStatistics" prefHeight="60.0" prefWidth="80.0" text="选择视频文件夹" wrapText="true">-->
+                                 <!--<VBox.margin>-->
+                                    <!--<Insets bottom="10.0" />-->
+                                 <!--</VBox.margin>-->
+                              <!--</Button>-->
+                        <!--</children>-->
+                        <!--</VBox>-->
+                        <!--</right>-->
+                        <!--</BorderPane>-->
+                    </content>
+                </Tab>
+                <Tab text="课程报文转换">
+                    <content>
+                        <fx:include source="CourseJson.fxml" />
+                        <!--<BorderPane prefHeight="200.0" prefWidth="200.0">-->
+                            <!--<top>-->
+                                <!--<TextField fx:id="courseTabMessageTextField" alignment="CENTER" editable="false" prefHeight="2.0" prefWidth="422.0" style="-fx-background-color: e3e3e3;" text="请输入必填项开始转换" BorderPane.alignment="CENTER">-->
+                                    <!--<font>-->
+                                        <!--<Font size="25.0" />-->
+                                    <!--</font>-->
+                                <!--</TextField>-->
+                            <!--</top>-->
+                            <!--<center>-->
+                                <!--<BorderPane prefHeight="339.0" prefWidth="281.0" BorderPane.alignment="CENTER">-->
+                                    <!--<left>-->
+                                        <!--<AnchorPane prefHeight="371.0" prefWidth="40.0" BorderPane.alignment="CENTER" />-->
+                                    <!--</left>-->
+                                    <!--<right>-->
+                                        <!--<AnchorPane prefHeight="371.0" prefWidth="35.0" BorderPane.alignment="CENTER" />-->
+                                    <!--</right>-->
+                                    <!--<center>-->
+                                        <!--<BorderPane prefHeight="371.0" prefWidth="222.0" BorderPane.alignment="CENTER">-->
+                                            <!--<center>-->
+                                                <!--<TextArea fx:id="courseTabInputTextArea" prefHeight="347.0" prefWidth="190.0" promptText="请将保存课程进度的报文粘贴至此" wrapText="true" BorderPane.alignment="CENTER">-->
+                                                    <!--<BorderPane.margin>-->
+                                                        <!--<Insets bottom="50.0" top="20.0" />-->
+                                                    <!--</BorderPane.margin>-->
+                                                <!--</TextArea>-->
+                                            <!--</center>-->
+                                            <!--<top>-->
+                                                <!--<TextField fx:id="courseTabTimeTextField" promptText="请输入课程时间" BorderPane.alignment="CENTER">-->
+                                                    <!--<BorderPane.margin>-->
+                                                        <!--<Insets top="20.0" />-->
+                                                    <!--</BorderPane.margin>-->
+                                                <!--</TextField>-->
+                                            <!--</top>-->
+                                        <!--</BorderPane>-->
+                                    <!--</center>-->
+                                <!--</BorderPane>-->
+                            <!--</center>-->
+                            <!--<right>-->
+                                <!--<VBox alignment="CENTER_LEFT" prefHeight="371.0" prefWidth="126.0" BorderPane.alignment="CENTER">-->
+                                    <!--<children>-->
+                                        <!--<Button fx:id="courseTabConvertButton" mnemonicParsing="false" onAction="#convert" prefHeight="40.0" prefWidth="80.0" text="开始转换">-->
+                                            <!--<VBox.margin>-->
+                                                <!--<Insets bottom="30.0" />-->
+                                            <!--</VBox.margin>-->
+                                        <!--</Button>-->
+                                        <!--<Button fx:id="courseTabEmtpyButton" mnemonicParsing="false" onAction="#emptyRequest" prefHeight="40.0" prefWidth="80.0" text="清空报文">-->
+                                            <!--<VBox.margin>-->
+                                                <!--<Insets bottom="30.0" />-->
+                                            <!--</VBox.margin>-->
+                                        <!--</Button>-->
+                                        <!--<Button fx:id="courseTabEmptyAllButton" mnemonicParsing="false" onAction="#emptyAll" prefHeight="40.0" prefWidth="80.0" text="清空所有">-->
+                                 <!--<VBox.margin>-->
+                                    <!--<Insets bottom="50.0" />-->
+                                 <!--</VBox.margin></Button>-->
+                                    <!--</children>-->
+                                <!--</VBox>-->
+
+                            <!--</right>-->
+                        <!--</BorderPane>-->
+                    </content>
+                </Tab>
+                <Tab text="other">
+                    <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                            <!--<right>-->
+                                <!--<Button fx:id="uploadBtn" mnemonicParsing="false" onAction="#exe" prefHeight="30.0" prefWidth="90.0" text="上传文件" BorderPane.alignment="CENTER" />-->
+                            <!--</right>-->
+                        </BorderPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
