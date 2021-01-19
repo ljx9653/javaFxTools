@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="561.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ljx.javaFx.controller.ExcelController">
+    <children>
+        <TabPane layoutX="14.0" layoutY="37.0" prefHeight="438.0" prefWidth="475.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="时间统计">
+                    <content>
+                        <fx:include source="timeStatistics.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Excel处理">
+                    <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <TitledPane animated="false" collapsible="false" text="数据源和输出文件夹选择" BorderPane.alignment="CENTER">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="129.0" prefWidth="511.0">
+                                 <children>
+                                    <BorderPane prefHeight="129.0" prefWidth="511.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <right>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="105.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <BorderPane prefHeight="105.0" prefWidth="166.0">
+                                                   <left>
+                                                      <Button fx:id="outputButton" onAction="#targetDir" mnemonicParsing="false" prefHeight="58.0" prefWidth="82.0" text="选择输出文件夹" textAlignment="CENTER" wrapText="true" BorderPane.alignment="CENTER">
+                                                         <opaqueInsets>
+                                                            <Insets top="20.0" />
+                                                         </opaqueInsets>
+                                                      </Button>
+                                                   </left>
+                                                </BorderPane>
+                                             </children>
+                                          </VBox>
+                                       </right>
+                                       <center>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="35.0" prefWidth="48.0" />
+                                                      <VBox prefHeight="35.0" prefWidth="123.0">
+                                                         <children>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="107.0" text="数据源Excel：" />
+                                                         </children>
+                                                      </VBox>
+                                                      <Button fx:id="sourceExcelButton" onAction="#sourceExcel" mnemonicParsing="false" prefHeight="35.0" prefWidth="88.0" text="选择文件" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" />
+                                                <HBox layoutX="10.0" layoutY="10.0" prefHeight="21.0" prefWidth="337.0">
+                                                   <children>
+                                                      <VBox prefHeight="35.0" prefWidth="48.0" />
+                                                      <VBox prefHeight="35.0" prefWidth="123.0">
+                                                         <children>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="114.0" text="Sheet页序号：" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_RIGHT" layoutX="57.0" layoutY="10.0" prefHeight="30.0" prefWidth="55.0">
+                                                         <children>
+                                                            <TextField fx:id="sheetIndex" alignment="CENTER" prefHeight="30.0" prefWidth="39.0" promptText="0" />
+                                                         </children>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </VBox>
+                                                   </children>
+                                                   <opaqueInsets>
+                                                      <Insets bottom="5.0" top="5.0" />
+                                                   </opaqueInsets>
+                                                </HBox>
+                                                <HBox layoutX="10.0" layoutY="40.0" prefHeight="100.0" prefWidth="200.0" />
+                                                <HBox layoutX="10.0" layoutY="63.0" prefHeight="21.0" prefWidth="337.0">
+                                                   <children>
+                                                      <VBox prefHeight="30.0" prefWidth="43.0" />
+                                                      <VBox prefHeight="30.0" prefWidth="129.0">
+                                                         <children>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="114.0" text="读取起始行：" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox alignment="TOP_RIGHT" layoutX="57.0" layoutY="10.0" prefHeight="30.0" prefWidth="55.0">
+                                                         <children>
+                                                            <TextField fx:id="startRowIndex" alignment="CENTER" prefHeight="30.0" prefWidth="39.0" promptText="0" />
+                                                         </children>
+                                                         <opaqueInsets>
+                                                            <Insets />
+                                                         </opaqueInsets>
+                                                      </VBox>
+                                                   </children>
+                                                   <opaqueInsets>
+                                                      <Insets bottom="5.0" top="5.0" />
+                                                   </opaqueInsets>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </TitledPane>
+                     </top>
+                     <center>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: e9e9e9;" BorderPane.alignment="CENTER">
+                           <center>
+                              <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <top>
+                                          <TitledPane animated="false" prefHeight="31.0" prefWidth="264.0" text="输出配置" BorderPane.alignment="CENTER" />
+                                       </top>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <center>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <left>
+                                                <CheckBox fx:id="dingCheckBox" mnemonicParsing="false" selected="true" text="钉钉需求" BorderPane.alignment="CENTER" />
+                                             </left>
+                                             <center>
+                                                <CheckBox fx:id="dingGeneIndex" mnemonicParsing="false" selected="true" text="生成索引" BorderPane.alignment="CENTER" />
+                                             </center>
+                                          </BorderPane>
+                                       </center>
+                                       <left>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                                       </left></BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" />
+                                    <BorderPane layoutX="10.0" layoutY="41.0" prefHeight="200.0" prefWidth="200.0">
+                                       <center>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <center>
+                                                <CheckBox fx:id="listGeneIndex" mnemonicParsing="false" selected="true" text="生成索引" BorderPane.alignment="CENTER" />
+                                             </center>
+                                             <left>
+                                                <CheckBox fx:id="listCheckBox" mnemonicParsing="false" selected="true" text="发版清单" BorderPane.alignment="CENTER" />
+                                             </left>
+                                          </BorderPane>
+                                       </center>
+                                       <left>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                                       </left>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0" />
+                                    <BorderPane layoutX="10.0" layoutY="91.0" prefHeight="200.0" prefWidth="200.0">
+                                       <center>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <center>
+                                                <CheckBox fx:id="detailGeneIndex" mnemonicParsing="false" text="生成索引" BorderPane.alignment="CENTER" />
+                                             </center>
+                                             <left>
+                                                <CheckBox fx:id="detailCheckBox" mnemonicParsing="false" selected="true" text="提测明细" BorderPane.alignment="CENTER" />
+                                             </left>
+                                          </BorderPane>
+                                       </center>
+                                       <left>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                                       </left>
+                                    </BorderPane>
+                                    <BorderPane layoutX="10.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+                                    <BorderPane layoutX="10.0" layoutY="133.0" prefHeight="200.0" prefWidth="200.0">
+                                       <center>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <center>
+                                                <CheckBox fx:id="onePictureGeneIndex" mnemonicParsing="false" text="生成索引" BorderPane.alignment="CENTER" />
+                                             </center>
+                                             <left>
+                                                <CheckBox fx:id="onePictureCheckBox" mnemonicParsing="false" selected="true" text="一图看懂" BorderPane.alignment="CENTER" />
+                                             </left>
+                                          </BorderPane>
+                                       </center>
+                                       <left>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                                       </left>
+                                    </BorderPane>
+                                    <BorderPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" />
+                                    <BorderPane layoutX="10.0" layoutY="164.0" prefHeight="200.0" prefWidth="200.0">
+                                       <center>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <center>
+                                                <CheckBox disable="true" mnemonicParsing="false" selected="true" text="生成索引" BorderPane.alignment="CENTER" />
+                                             </center>
+                                             <left>
+                                                <CheckBox fx:id="contentCheckBox" mnemonicParsing="false" selected="true" text="发版内容" BorderPane.alignment="CENTER" />
+                                             </left>
+                                          </BorderPane>
+                                       </center>
+                                       <left>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                                       </left>
+                                    </BorderPane>
+                                 </children>
+                              </VBox>
+                           </center>
+                           <bottom>
+                              <BorderPane prefHeight="19.0" prefWidth="513.0" BorderPane.alignment="CENTER" />
+                           </bottom></BorderPane>
+                     </center>
+                     <bottom>
+                        <BorderPane prefHeight="72.0" prefWidth="513.0" style="-fx-background-color: d3d3d3;" BorderPane.alignment="CENTER">
+                           <left>
+                              <HBox prefHeight="72.0" prefWidth="267.0" BorderPane.alignment="CENTER" />
+                           </left>
+                           <center>
+                              <Button fx:id="executeButton"  onAction="#generateAll"  alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" prefHeight="42.0" prefWidth="103.0" text="开始生成" textFill="#450b0b" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                           </center>
+                        </BorderPane>
+                     </bottom></BorderPane>
+                    </content>
+                </Tab>
+                <Tab text="课程报文转换">
+                    <content>
+                        <fx:include source="CourseJson.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="other">
+                    <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                            <!--<right>-->
+                                <!--<Button fx:fx:id="uploadBtn" mnemonicParsing="false" onAction="#exe" prefHeight="30.0" prefWidth="90.0" text="上传文件" BorderPane.alignment="CENTER" />-->
+                            <!--</right>-->
+                        </BorderPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

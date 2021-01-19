@@ -5,6 +5,7 @@ package com.ljx.javaFx;
  * @date 2019/4/11 - 9:45
  */
 
+import com.ljx.javaFx.controller.ExcelController;
 import com.ljx.javaFx.controller.TimeStatisticsController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -23,11 +24,12 @@ public class Main extends Application {
         try {
             //如果写ClassLoader就不写/，不行ClassLoader就要加/
 //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("tools.fxml"));
-            Parent root = FXMLLoader.load(getClass().getResource("/tools.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/fxml/tools.fxml"));
             primaryStage.setTitle("tools");
             primaryStage.setScene(new Scene(root));
             //此条语句上传文件需要用到
             TimeStatisticsController.setStage(primaryStage);
+            ExcelController.setStage(primaryStage);
             primaryStage.show();
         } catch (Exception e) {
             e.printStackTrace();

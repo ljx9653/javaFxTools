@@ -37,8 +37,11 @@ public class TimeStatisticsService {
     }
 
     private long getDirVideoTime(File dir) {
-        File[] files = dir.listFiles();
         long l = 0;
+        if (dir == null) {
+            return l;
+        }
+        File[] files = dir.listFiles();
         if (files == null) {
             return l;
         }
@@ -59,8 +62,4 @@ public class TimeStatisticsService {
     public void setTotalTime(String totalTime) {
         this.totalTime = totalTime;
     }
-//    public static void main(String[] args) {
-//        String s = new TimeStatisticsService().dirTimeStatistics(new File("D:\\视频\\Redis\\视频\\新建文件夹"));
-//        System.out.println(s);
-//    }
 }
