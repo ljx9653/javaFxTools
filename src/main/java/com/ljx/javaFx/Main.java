@@ -22,7 +22,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            //如果写ClassLoader就不写/，不行ClassLoader就要加/
+            //如果写ClassLoader就不写/，不写ClassLoader就要加/
 //Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("tools.fxml"));
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/tools.fxml"));
             primaryStage.setTitle("tools");
