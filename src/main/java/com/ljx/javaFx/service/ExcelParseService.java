@@ -244,10 +244,13 @@ public class ExcelParseService {
         return true;
     }
 
-    private String[] filterString = {"\n", ",", "，", "。", ":", "：", " "};
+    private String[] filterString = {"\\s", ",", "，", "。", ":", "："};
 
     private String parseServiceName(String origin) {
         String str = origin;
+        if (str == null || str.length() == 0) {
+            return "";
+        }
         for (String s : filterString) {
             str = str.replaceAll(s, "");
         }

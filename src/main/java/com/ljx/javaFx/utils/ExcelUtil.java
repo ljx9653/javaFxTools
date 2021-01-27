@@ -240,7 +240,7 @@ public class ExcelUtil {
             if (data instanceof LinkedHashMap) {
                 Map<Integer, String> dataMap = (LinkedHashMap<Integer, String>) data;
                 ArrayList<String> list = new ArrayList<>();
-                dataMap.forEach((x, y) -> list.add(x, y));
+                dataMap.forEach((x, y) -> list.add(x, y == null ? "" : y));
                 datas.add(list);
             }
         }
