@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 /**
  * @author lijx
@@ -246,7 +247,16 @@ public class ExcelParseService {
 
     private String[] filterString = {"\\s", ",", "，", "。", ":", "："};
 
-    private String parseServiceName(String origin) {
+    private Pattern featurePattern = Pattern.compile("feature_\\d{4,6}_\\d{8,9}");
+
+    private Pattern releasePattern = Pattern.compile("release_\\d{8}");
+
+    /**
+     * 使用了正则来替换指定字符串，java的正则有一些坑，请注意
+     * @param origin
+     * @return
+     */
+    public String parseServiceName(String origin) {
         String str = origin;
         if (str == null || str.length() == 0) {
             return "";
@@ -254,13 +264,10 @@ public class ExcelParseService {
         for (String s : filterString) {
             str = str.replaceAll(s, "");
         }
-        while (str.contains("feature")) {
-            int index = str.indexOf("feature");
-            str = str.substring(0, index) + str.substring(index + 21);
-        }
-        str = str.replaceAll("cs_", "、cs_");
-        if (str.length() > 1) {
-            str = str.substring(1);
+        str = featurePattern.matcher(str).replaceAll("、");
+        str = releasePattern.matcher(str).replaceAll("、");
+        if (str.endsWith("、")) {
+            str = str.substring(0, str.length() - 1);
         }
         return str;
     }

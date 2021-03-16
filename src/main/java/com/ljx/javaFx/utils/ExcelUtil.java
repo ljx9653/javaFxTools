@@ -250,6 +250,20 @@ public class ExcelUtil {
         }
 
         public List<List<String>> getDatas() {
+            int maxSize = 0;
+            for (List<String> data : datas) {
+                if (data.size() > maxSize) {
+                    maxSize = data.size();
+                }
+            }
+            for (List<String> data : datas) {
+                if (data.size() < maxSize) {
+                    int tmp = maxSize - data.size();
+                    for (int i = 0; i < tmp; i++) {
+                        data.add("");
+                    }
+                }
+            }
             return datas;
         }
     }

@@ -113,7 +113,7 @@ public class ExcelController {
             Files.createDirectory(outputDir);
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("创建目录发生异常，e: " + e.toString());
+            MessageUtil.alert("温馨提示", "创建目录发生异常，e：" + e.toString());
             return;
         }
         try {
@@ -134,9 +134,9 @@ public class ExcelController {
                 service.generateTxtFile(data, outputDir.toFile());
             }
             MessageUtil.alert("温馨提示", "        生成完毕，请在\"" + outputDir.toAbsolutePath().toString() + "\"查看");
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
+            MessageUtil.alert("温馨提示", "生成文件发生异常，e：" + e.toString());
             e.printStackTrace();
-            System.out.println("生成文件发生异常，e: " + e.toString());
         } finally {
             sourceExcel = null;
             targetDir = null;
